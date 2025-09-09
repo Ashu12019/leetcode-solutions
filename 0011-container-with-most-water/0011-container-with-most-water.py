@@ -4,14 +4,15 @@ class Solution:
         res = 0
 
         while l < r:
-            # Calculate current area
-            area = (r - l) * min(height[l], height[r])
-            res = max(res, area)
-
-            # Move the pointer with the smaller height
+            # calculate width
+            width = r - l
+            
+            # check which line is smaller
             if height[l] < height[r]:
+                res = max(res, width * height[l])
                 l += 1
             else:
+                res = max(res, width * height[r])
                 r -= 1
 
         return res
