@@ -1,0 +1,14 @@
+class Solution(object):
+    def isPalindrome(self, x):
+        if x<0:
+            return False
+        original_number = x
+        reversed_number = 0
+        while x != 0:
+            digit = x % 10
+            x = x // 10
+            reversed_number = reversed_number * 10 + digit
+        if reversed_number == original_number:
+            return True    
+        else:
+            return False    
